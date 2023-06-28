@@ -21,7 +21,7 @@ class MainActivity2 : AppCompatActivity() {
         val adapter = DataAdapter(dataList);
         listView.adapter = adapter;
         requestQueue = Volley.newRequestQueue(this)
-        val url = "https://jsonplaceholder.typicode.com/posts"
+        val url = "http://192.168.18.118:5001/books"
 
         val jsonArrayRequest = JsonArrayRequest(Request.Method.GET, url, null,
             { response ->
@@ -44,12 +44,15 @@ class MainActivity2 : AppCompatActivity() {
         try {
             for (i in 0 until response.length()) {
                 val jsonObject = response.getJSONObject(i)
-                val userId = jsonObject.getInt("userId")
+                val autor = jsonObject.getString("autor")
+                val descripcion = jsonObject.getString("descripcion")
                 val id = jsonObject.getInt("id")
-                val title = jsonObject.getString("title")
-                val body = jsonObject.getString("body")
+                val idCategory = jsonObject.getInt("id_category")
+                val idUsuario = jsonObject.getInt("id_usuario")
+                val precio = jsonObject.getDouble("precio")
+                val titulo = jsonObject.getString("titulo")
 
-                val dataItem = DataItem(userId, id, title, body)
+                val dataItem = DataItem(autor, descripcion, id, idCategory, idUsuario, precio, titulo)
                 dataList.add(dataItem)
             }
         } catch (e: Exception) {

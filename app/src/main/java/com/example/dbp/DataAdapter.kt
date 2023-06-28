@@ -4,9 +4,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.ImageView
 import android.widget.TextView
 
-// Esta clase adapter nos sirve para poder manejar el contenido de la lista de Views que queremos mostrar
 class DataAdapter(private val dataList: List<DataItem>) : BaseAdapter() {
 
     override fun getCount(): Int {
@@ -26,11 +26,18 @@ class DataAdapter(private val dataList: List<DataItem>) : BaseAdapter() {
 
         val dataItem = dataList[position]
 
+        val imageViewBook = view.findViewById<ImageView>(R.id.imageViewBook)
         val textViewTitle = view.findViewById<TextView>(R.id.textViewTitle)
-        val textViewBody = view.findViewById<TextView>(R.id.textViewBody)
+        val textViewAuthor = view.findViewById<TextView>(R.id.textViewAuthor)
+        val textViewDescription = view.findViewById<TextView>(R.id.textViewDescription)
+        val textViewPrice = view.findViewById<TextView>(R.id.textViewPrice)
 
-        textViewTitle.text = dataItem.title
-        textViewBody.text = dataItem.body
+        textViewTitle.text = dataItem.titulo
+        textViewAuthor.text = "Autor: ${dataItem.autor}"
+        textViewDescription.text = "Descripción: ${dataItem.descripcion}"
+        textViewPrice.text = "Precio: $${dataItem.precio}"
+
+        imageViewBook.setImageResource(R.drawable.tarzan)
 
         return view
     }
