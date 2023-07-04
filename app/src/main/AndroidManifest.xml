@@ -29,6 +29,8 @@
         <activity
             android:name="Category"
             android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
     </application>
-
 </manifest>

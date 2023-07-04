@@ -20,13 +20,20 @@ import org.json.JSONArray
 class MainActivity : AppCompatActivity() {
     private val dataList = mutableListOf<DataItem>()
     private lateinit var requestQueue: RequestQueue
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val textView =  findViewById<TextView>(R.id.textView)
-        val btnOpciones = findViewById<Button>(R.id.btnOpciones)
+        val textView = findViewById<TextView>(R.id.textView)
+        val btnIniciarSesion = findViewById<Button>(R.id.btnIniciarSesion)
 
+        btnIniciarSesion.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
+
+        val btnOpciones = findViewById<Button>(R.id.btnOpciones)
         btnOpciones.setOnClickListener { view ->
             val popupMenu = PopupMenu(this, view)
             popupMenu.inflate(R.menu.menu_opciones)
@@ -46,9 +53,9 @@ class MainActivity : AppCompatActivity() {
                             popupMenu.menu.removeItem(R.id.menu_comunicacion)
                         }
                     }
-                    R.id.menu_buscar_todos  -> { getBooks() }
+                    R.id.menu_buscar_todos -> { getBooks() }
                     R.id.menu_matematicas -> { getBooks(1) }
-                    R.id.menu_programacion  -> { getBooks(2) }
+                    R.id.menu_programacion -> { getBooks(2) }
                     R.id.menu_comunicacion -> { getBooks(3) }
                     R.id.menu_contactos -> { textView.text = item.title.toString() }
                 }
@@ -58,12 +65,13 @@ class MainActivity : AppCompatActivity() {
         }
         getBooks()
     }
+
     private fun getBooks() {
-        consultRoute("http://192.168.0.20:5000/books")
+        consultRoute("http://192.168.18.118:5001/books")
     }
 
     private fun getBooks(idCategory: Int) {
-        consultRoute("http://192.168.0.20:5000/books/categorias/" + idCategory.toString())
+        consultRoute("http://192.168.18.118:5001/books/categorias/" + idCategory.toString())
     }
 
     private fun consultRoute(url: String) {
@@ -71,7 +79,7 @@ class MainActivity : AppCompatActivity() {
         val adapter = DataAdapter(dataList)
         listView.adapter = adapter
         requestQueue = Volley.newRequestQueue(this)
-        val textView =  findViewById<TextView>(R.id.textView)
+        val textView = findViewById<TextView>(R.id.textView)
         val jsonArrayRequest = JsonArrayRequest(
             Request.Method.GET, url, null,
             { response ->
@@ -100,7 +108,9 @@ class MainActivity : AppCompatActivity() {
                 val dataItem = DataItem(autor, descripcion, id, idCategory, idUsuario, precio, titulo)
                 dataList.add(dataItem)
             }
-        } catch (e: Exception) {e.printStackTrace() }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
         return dataList
     }
 }
