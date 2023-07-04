@@ -3,6 +3,7 @@ package com.example.dbp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ListView
+import android.widget.TextView
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.toolbox.JsonArrayRequest
@@ -17,11 +18,13 @@ class MainActivity2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
 
+        val textView7 =  findViewById<TextView>(R.id.textView7)
+        textView7.text = "Lista de libros"
         val listView = findViewById<ListView>(R.id.postListView)
-        val adapter = DataAdapter(dataList);
-        listView.adapter = adapter;
+        val adapter = DataAdapter(dataList)
+        listView.adapter = adapter
         requestQueue = Volley.newRequestQueue(this)
-        val url = "http://192.168.18.118:5001/books"
+        val url = "http://192.168.0.20:5000/books"
 
         val jsonArrayRequest = JsonArrayRequest(Request.Method.GET, url, null,
             { response ->
@@ -32,13 +35,10 @@ class MainActivity2 : AppCompatActivity() {
             { error ->
                 println(error.toString())
             })
-
         requestQueue.add(jsonArrayRequest)
-
     }
 
     // * Recibe un JSON y devuelve una lista con los elementos ya representados en clases
-
     private fun parseResponse(response: JSONArray): List<DataItem> {
         val dataList = mutableListOf<DataItem>()
         try {

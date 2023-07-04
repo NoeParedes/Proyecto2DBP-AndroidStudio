@@ -1,0 +1,29 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_buscar_libros"
+        android:title="Buscar libros">
+
+        <menu>
+            <item
+                android:id="@+id/menu_buscar_todos"
+                android:title="Buscar todos" />
+
+            <item
+                android:id="@+id/menu_matematicas"
+                android:title="Matemáticas" />
+
+            <item
+                android:id="@+id/menu_programacion"
+                android:title="Programación" />
+
+            <item
+                android:id="@+id/menu_comunicacion"
+                android:title="Comunicación" />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/menu_contactos"
+        android:title="Contactos" />
+</menu>
+

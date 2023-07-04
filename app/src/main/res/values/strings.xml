@@ -1,4 +1,19 @@
 <resources>
     <string name="app_name">dbp</string>
-    <string name="holaa_mundo">Holaa mundo 😬</string>
+    <string name="holaa_mundo">Hola mundo</string>
+
+    <!-- Strings de login -->
+    <string name="hint_loginTitle"> INICIAR SESIÓN </string>
+    <string name="hint_emailAddressLabel"> Correo electrónico: </string>
+    <string name="hint_emailAddress"> Correo electrónico </string>
+    <string name="hint_passwordLabel"> Contraseña: </string>
+    <string name="hint_password"> Contraseña </string>
+    <string name="hint_loginButton">Iniciar Sesión</string>
+
+    <!-- Strings de category -->
+    <string name="hint_categoryTitle"> CATEGORÍAS </string>
+    <string name="hint_Button1"> Matemáticas </string>
+    <string name="hint_Button2"> Programación </string>
+    <string name="hint_Button3"> Comunicación </string>
+    <string name="hint_test"> Inicio de Prueba </string>
 </resources>
