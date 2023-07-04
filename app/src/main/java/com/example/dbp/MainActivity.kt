@@ -67,11 +67,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getBooks() {
-        consultRoute("http://192.168.18.118:5001/books")
+        consultRoute("http://192.168.0.20:5000/books")
     }
 
     private fun getBooks(idCategory: Int) {
-        consultRoute("http://192.168.18.118:5001/books/categorias/" + idCategory.toString())
+
+        consultRoute("http://192.168.0.20:5000/books/categorias/" + idCategory.toString())
     }
 
     private fun consultRoute(url: String) {

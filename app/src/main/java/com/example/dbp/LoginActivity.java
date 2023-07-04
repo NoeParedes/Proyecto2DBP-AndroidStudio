@@ -42,30 +42,36 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void loginUser(String username, String password) {
-        String url = "http://192.168.18.118:5001/users?username=" + username + "&password=" + password;
+        String url = "http://192.168.0.20:5000/users/login";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null,
+        JSONObject jsonParams = new JSONObject();
+        try {
+            jsonParams.put("correo", username);
+            jsonParams.put("password", password);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, jsonParams,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
-                            boolean userExists = response.getBoolean("SUCCESS");
-
-                            if (userExists) {
-                                Toast.makeText(LoginActivity.this, "Welcome, " + username + "!", Toast.LENGTH_SHORT).show();
+                            if(response.has("ERROR")) {
+                                Toast.makeText(LoginActivity.this, response.getString("ERROR"), Toast.LENGTH_SHORT).show();
                             } else {
-                                Toast.makeText(LoginActivity.this, "User does not exist", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, response.getString("id") + " - " + response.getString("username"), Toast.LENGTH_SHORT).show();
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
                     }
                 }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(LoginActivity.this, "Error: " + error.toString(), Toast.LENGTH_SHORT).show();
-            }
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(LoginActivity.this, "Error: " + error.toString(), Toast.LENGTH_SHORT).show();
+                    }
         });
 
         requestQueue.add(jsonObjectRequest);
