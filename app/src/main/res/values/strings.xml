@@ -16,4 +16,6 @@
     <string name="hint_Button2"> Programación </string>
     <string name="hint_Button3"> Comunicación </string>
     <string name="hint_test"> Inicio de Prueba </string>
+    <string name="apellidos">Apellidos</string>
+    <string name="correo_electronico">Correo electronico</string>
 </resources>

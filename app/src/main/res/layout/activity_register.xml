@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".RegisterActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,25 +14,44 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Login"
+            android:text="Registro"
             android:textSize="60sp"
-            android:layout_marginTop="60dp"
-            android:layout_marginLeft="25dp"/>
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="25dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ingresa tu correo y contraseña"
+            android:text="Completa este formulario"
             android:textSize="20sp"
-            android:layout_marginLeft="25dp"
+            android:layout_marginStart="25dp"
             android:layout_marginTop="8dp" />
+        <EditText
+            android:id="@+id/editTextName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Nombre"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:inputType="textPersonName"
+            android:textSize="15sp"/>
+        <EditText
+            android:id="@+id/editTextLastname"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/apellidos"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="20dp"
+            android:inputType="textPersonName"
+            android:textSize="15sp"/>
         <EditText
             android:id="@+id/editTextEmail"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="Correo electronico"
+            android:hint="@string/correo_electronico"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="15dp"
             android:inputType="textEmailAddress"
             android:textSize="15sp"/>
         <EditText
@@ -40,6 +59,16 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:hint="Contraseña"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="15dp"
+            android:inputType="textPassword"
+            android:textSize="15sp"/>
+        <EditText
+            android:id="@+id/editTextRepeatedPassword"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Repetir Contraseña"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
             android:layout_marginTop="15dp"
@@ -54,18 +83,18 @@
         android:layout_gravity="bottom"
         android:gravity="center_horizontal">
         <Button
-            android:id="@+id/btn_go_to_menu"
+            android:id="@+id/register_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Iniciar sesion"
+            android:text="Registrarse"
             android:layout_marginRight="25dp"
             android:layout_marginLeft="25dp"
             android:backgroundTint="@color/btn_color"/>
         <TextView
-            android:id="@+id/tv_go_to_register"
+            android:id="@+id/tv_go_to_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="¿No tienes una cuenta?"
+            android:text="Volver al login"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"/>
 

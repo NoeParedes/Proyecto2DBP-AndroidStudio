@@ -16,9 +16,6 @@
         android:theme="@style/Theme.Dbp"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity2"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -30,7 +27,16 @@
             android:name="Category"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BuyBooksActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewPurchaseActivity"
             android:exported="false" />
     </application>
 </manifest>

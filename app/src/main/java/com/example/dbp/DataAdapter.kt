@@ -26,11 +26,11 @@ class DataAdapter(private val dataList: List<DataItem>) : BaseAdapter() {
 
         val dataItem = dataList[position]
 
-        val imageViewBook = view.findViewById<ImageView>(R.id.imageViewBook)
-        val textViewTitle = view.findViewById<TextView>(R.id.textViewTitle)
-        val textViewAuthor = view.findViewById<TextView>(R.id.textViewAuthor)
+        val imageViewBook       = view.findViewById<ImageView>(R.id.imageViewBook)
+        val textViewTitle       = view.findViewById<TextView>(R.id.textViewTitle)
+        val textViewAuthor      = view.findViewById<TextView>(R.id.textViewAuthor)
         val textViewDescription = view.findViewById<TextView>(R.id.textViewDescription)
-        val textViewPrice = view.findViewById<TextView>(R.id.textViewPrice)
+        val textViewPrice       = view.findViewById<TextView>(R.id.textViewPrice)
 
         textViewTitle.text = dataItem.titulo
         textViewAuthor.text = "Autor: ${dataItem.autor}"
@@ -42,3 +42,50 @@ class DataAdapter(private val dataList: List<DataItem>) : BaseAdapter() {
         return view
     }
 }
+
+
+/*
+* class PurchaseItemAdapter(private val dataList: List<PurchaseItem>) : BaseAdapter() {
+
+    override fun getCount(): Int {
+        return dataList.size
+    }
+
+    override fun getItem(position: Int): Any {
+        return dataList[position]
+    }
+
+    override fun getItemId(position: Int): Long {
+        return position.toLong()
+    }
+
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+        val view: View = convertView ?: LayoutInflater.from(parent?.context).inflate(R.layout.list_item_data, parent, false)
+
+        val dataItem = dataList[position]
+
+        val imageViewBook       = view.findViewById<ImageView>(R.id.imageViewBook)
+        val textViewTitle       = view.findViewById<TextView>(R.id.textViewTitle)
+        val textViewAuthor      = view.findViewById<TextView>(R.id.textViewAuthor)
+        val textViewDescription = view.findViewById<TextView>(R.id.textViewDescription)
+        val textViewPrice       = view.findViewById<TextView>(R.id.textViewPrice)
+
+        val id      : Int,
+        val user_id : Int,
+        val autor   : String,
+        val title   : String,
+        val price   : Float,
+        val day     : String,
+        val hour    : String
+
+        textViewTitle.text = dataItem.titulo
+        textViewAuthor.text = "Autor: ${dataItem.autor}"
+        textViewDescription.text = "Descripción: ${dataItem.descripcion}"
+        textViewPrice.text = "Precio: $${dataItem.precio}"
+
+        imageViewBook.setImageResource(R.drawable.tarzan)
+
+        return view
+    }
+}
+* */

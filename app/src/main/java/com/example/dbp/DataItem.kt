@@ -1,6 +1,5 @@
 package com.example.dbp
 
-// Esta clase va a representar la información que recibimos en el JSON
 data class DataItem(
     val autor: String,
     val descripcion: String,
@@ -9,4 +8,14 @@ data class DataItem(
     val id_usuario: Int,
     val precio: Double,
     val titulo: String
+)
+
+data class PurchaseItem(
+    val id      : Int,
+    val user_id : Int,
+    val autor   : String,
+    val title   : String,
+    val price   : Float,
+    val day     : String,
+    val hour    : String
 )

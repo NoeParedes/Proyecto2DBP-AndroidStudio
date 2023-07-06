@@ -28,7 +28,6 @@
             android:layout_height="wrap_content"
             android:text="@string/hint_Button3"
             android:minWidth="160dp"/>
-
     </LinearLayout>
 
     <TextView
