@@ -58,7 +58,7 @@ class RegisterActivity : AppCompatActivity() {
 
 
     private fun registerUser(name: String, lastname: String, email: String, password: String) {
-        val url = "http://192.168.0.20:5000/users"
+        val url = getString(R.string.URL) + "/users"
         val requestQueue = Volley.newRequestQueue(this)
 
         val jsonParams = JSONObject()

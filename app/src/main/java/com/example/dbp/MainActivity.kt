@@ -54,12 +54,12 @@ class MainActivity : AppCompatActivity() {
     }
     private fun gotoMenu(id: String) {
         val i = Intent(this, MenuActivity::class.java)
-        i.putExtra("userId", id) // Reemplazar "12345" con la ID del usuario
+        i.putExtra("userId", id)
         startActivity(i)
     }
 
     private fun login(username: String, password: String) {
-        val url = "http://192.168.0.20:5000/users/login"
+        val url = getString(R.string.URL) + "/users/login"
         val requestQueue = Volley.newRequestQueue(this)
         val jsonParams = JSONObject()
         try {

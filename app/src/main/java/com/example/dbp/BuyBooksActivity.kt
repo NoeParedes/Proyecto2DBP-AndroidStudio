@@ -64,12 +64,12 @@ class BuyBooksActivity : AppCompatActivity() {
     }
 
     private fun getBooks() {
-        consultRoute("http://192.168.0.20:5000/books")
+        consultRoute(getString(R.string.URL) + "/books")
     }
 
     private fun getBooks(idCategory: Int) {
 
-        consultRoute("http://192.168.0.20:5000/books/categorias/$idCategory")
+        consultRoute(getString(R.string.URL) + "/books/categorias/$idCategory")
     }
 
     private fun consultRoute(url: String) {
