@@ -32,8 +32,9 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/viewAccountButton"
             android:layout_width="match_parent"
-            android:text="Vender libros"
+            android:text="Ver Cuenta"
             android:backgroundTint="@color/btn_color"
             android:drawableLeft="@drawable/ic_sell"
             style="@style/MenuButton"/>
@@ -45,13 +46,7 @@
             android:drawableLeft="@drawable/ic_library"
             style="@style/MenuButton"/>
         <Button
-            android:layout_width="match_parent"
-            android:text="Ver mis Libros"
-            android:backgroundTint="@color/btn_color"
-            android:drawableLeft="@drawable/ic_library"
-            style="@style/MenuButton"/>
-        <Button
-            android:id="@+id/viewPuchaseButton"
+            android:id="@+id/viewPurchaseButton"
             android:layout_width="match_parent"
             android:text="Ver mis Compras"
             android:backgroundTint="@color/btn_color"

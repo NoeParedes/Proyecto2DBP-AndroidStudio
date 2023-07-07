@@ -33,6 +33,9 @@
             android:name=".MenuActivity"
             android:exported="false" />
         <activity
+            android:name=".ViewAccountActivity"
+            android:exported="false"/>
+        <activity
             android:name=".BuyBooksActivity"
             android:exported="false" />
         <activity

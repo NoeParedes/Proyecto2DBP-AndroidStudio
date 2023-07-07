@@ -16,22 +16,29 @@ class MenuActivity : AppCompatActivity() {
         setContentView(R.layout.activity_menu)
 
         userId = intent.getStringExtra("userId")
-        val buttonBuyBooks      = findViewById<Button>(R.id.buyBooksButton)
-        val buttonViewPurchase = findViewById<Button>(R.id.viewPuchaseButton)
-        val buttonLogout        = findViewById<Button>(R.id.logoutButton)
+        val buttonViewAccount  = findViewById<Button>(R.id.viewAccountButton)
+        val buttonBuyBooks     = findViewById<Button>(R.id.buyBooksButton)
+        val buttonViewPurchase = findViewById<Button>(R.id.viewPurchaseButton)
+        val buttonLogout       = findViewById<Button>(R.id.logoutButton)
 
-        buttonBuyBooks.setOnClickListener() {
+        buttonViewAccount.setOnClickListener() {
+            val intent = Intent(this, ViewAccountActivity::class.java)
+            intent.putExtra("userId", userId)
+            startActivity(intent)
+        }
+
+        buttonBuyBooks.setOnClickListener {
             val intent = Intent(this, BuyBooksActivity::class.java)
             startActivity(intent)
         }
 
-        buttonViewPurchase.setOnClickListener() {
+        buttonViewPurchase.setOnClickListener {
             val intent = Intent(this, ViewPurchaseActivity::class.java)
             intent.putExtra("userId", userId)
             startActivity(intent)
         }
 
-        buttonLogout.setOnClickListener() {
+        buttonLogout.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
             startActivity(intent)

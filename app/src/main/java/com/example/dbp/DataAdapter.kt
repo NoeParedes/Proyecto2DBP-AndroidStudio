@@ -1,5 +1,6 @@
 package com.example.dbp
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,6 +22,7 @@ class DataAdapter(private val dataList: List<DataItem>) : BaseAdapter() {
         return position.toLong()
     }
 
+    @SuppressLint("SetTextI18n")
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val view: View = convertView ?: LayoutInflater.from(parent?.context).inflate(R.layout.list_item_data, parent, false)
 
@@ -35,7 +37,7 @@ class DataAdapter(private val dataList: List<DataItem>) : BaseAdapter() {
         textViewTitle.text = dataItem.titulo
         textViewAuthor.text = "Autor: ${dataItem.autor}"
         textViewDescription.text = "Descripción: ${dataItem.descripcion}"
-        textViewPrice.text = "Precio: $${dataItem.precio}"
+        textViewPrice.text = "Precio: ${dataItem.precio}"
 
         imageViewBook.setImageResource(R.drawable.tarzan)
 
@@ -43,6 +45,35 @@ class DataAdapter(private val dataList: List<DataItem>) : BaseAdapter() {
     }
 }
 
+class PurchaseItemDataAdapter(private val dataList: List<PurchaseItem>) : BaseAdapter() {
+
+    override fun getCount(): Int {
+        return dataList.size
+    }
+
+    override fun getItem(position: Int): Any {
+        return dataList[position]
+    }
+
+    override fun getItemId(position: Int): Long {
+        return position.toLong()
+    }
+
+    @SuppressLint("SetTextI18n")
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+        val view: View = convertView ?: LayoutInflater.from(parent?.context).inflate(R.layout.list_item_purchase, parent, false)
+        val dataItem = dataList[position]
+
+        val textViewTitle        = view.findViewById<TextView>(R.id.textViewTitle)
+        val textViewDatePurchase = view.findViewById<TextView>(R.id.textViewDatePurchase)
+        val textViewPrice        = view.findViewById<TextView>(R.id.textViewPrice)
+
+        textViewTitle.text        = "Titulo: ${dataItem.title}"
+        textViewPrice.text        = "Precio: ${dataItem.price}"
+        textViewDatePurchase.text = "Fecha de compra: ${dataItem.day} - ${dataItem.hour}"
+        return view
+    }
+}
 
 /*
 * class PurchaseItemAdapter(private val dataList: List<PurchaseItem>) : BaseAdapter() {

@@ -42,10 +42,8 @@ class ViewPurchaseActivity: AppCompatActivity() {
         super.onDestroy()
     }
 
-    /*
     private fun getPurchases() {
-        var url = "http://192.168.0.20:5000/books/categorias/$userId"
+        var url = getString(R.string.URL) + "/books/categorias/$userId"
     }
-    * */
 
 }

@@ -68,7 +68,6 @@ class BuyBooksActivity : AppCompatActivity() {
     }
 
     private fun getBooks(idCategory: Int) {
-
         consultRoute(getString(R.string.URL) + "/books/categorias/$idCategory")
     }
 

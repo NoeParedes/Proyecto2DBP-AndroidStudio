@@ -3,7 +3,6 @@ package com.example.dbp
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -14,10 +13,6 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import org.json.JSONException
 import org.json.JSONObject
-
-// import android.view.MotionEvent
-// import android.view.View.OnTouchListener
-// import android.util.Log
 
 class MainActivity : AppCompatActivity() {
     private lateinit var usernameEditText: EditText
@@ -68,6 +63,7 @@ class MainActivity : AppCompatActivity() {
         } catch (e: JSONException) {
             e.printStackTrace()
         }
+
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.POST, url, jsonParams,
             { response ->

@@ -20,4 +20,6 @@
     <string name="hint_test"> Inicio de Prueba </string>
     <string name="apellidos">Apellidos</string>
     <string name="correo_electronico">Correo electronico</string>
+
+    <string name="hint_backMenu"> Volver al Menu </string>
 </resources>
