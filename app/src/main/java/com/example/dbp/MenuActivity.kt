@@ -29,6 +29,7 @@ class MenuActivity : AppCompatActivity() {
 
         buttonBuyBooks.setOnClickListener {
             val intent = Intent(this, BuyBooksActivity::class.java)
+            intent.putExtra("userId", userId)
             startActivity(intent)
         }
 

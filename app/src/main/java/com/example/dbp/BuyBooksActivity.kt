@@ -23,6 +23,7 @@ class BuyBooksActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_buybooks)
 
+        val userId =  intent.getStringExtra("userId") ?: "0"
         val textView = findViewById<TextView>(R.id.textView)
 
         val btnOpciones = findViewById<Button>(R.id.btnOpciones)
@@ -45,17 +46,17 @@ class BuyBooksActivity : AppCompatActivity() {
                             popupMenu.menu.removeItem(R.id.menu_comunicacion)
                         }
                     }
-                    R.id.menu_buscar_todos -> { getBooks() }
-                    R.id.menu_matematicas -> { getBooks(1) }
-                    R.id.menu_programacion -> { getBooks(2) }
-                    R.id.menu_comunicacion -> { getBooks(3) }
+                    R.id.menu_buscar_todos -> { getBooks(userId) }
+                    R.id.menu_matematicas -> { getBooks(1,userId) }
+                    R.id.menu_programacion -> { getBooks(2, userId) }
+                    R.id.menu_comunicacion -> { getBooks(3, userId) }
                     R.id.menu_contactos -> { textView.text = item.title.toString() }
                 }
                 true
             }
             popupMenu.show()
         }
-        getBooks()
+        getBooks(userId)
     }
 
     override fun onDestroy() {
@@ -63,17 +64,17 @@ class BuyBooksActivity : AppCompatActivity() {
         super.onDestroy()
     }
 
-    private fun getBooks() {
-        consultRoute(getString(R.string.URL) + "/books")
+    private fun getBooks(userId: String) {
+        consultRoute(getString(R.string.URL) + "/books", userId)
     }
 
-    private fun getBooks(idCategory: Int) {
-        consultRoute(getString(R.string.URL) + "/books/categorias/$idCategory")
+    private fun getBooks(idCategory: Int, userId: String) {
+        consultRoute(getString(R.string.URL) + "/books/categorias/$idCategory", userId)
     }
 
-    private fun consultRoute(url: String) {
+    private fun consultRoute(url: String, userId: String) {
         val listView = findViewById<ListView>(R.id.postListView)
-        val adapter = DataAdapter(dataList)
+        val adapter = DataAdapter(dataList,userId)
         listView.adapter = adapter
         requestQueue = Volley.newRequestQueue(this)
         val textView = findViewById<TextView>(R.id.textView)
