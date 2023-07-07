@@ -15,7 +15,7 @@ data class PurchaseItem(
     val user_id : Int,
     val autor   : String,
     val title   : String,
-    val price   : Float,
+    val price   : Double,
     val day     : String,
     val hour    : String
 )
