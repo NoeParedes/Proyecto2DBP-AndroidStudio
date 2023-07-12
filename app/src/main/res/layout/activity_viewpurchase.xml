@@ -15,7 +15,8 @@
         android:text="Historial de compras"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="16dp"
+        android:drawableLeft="@drawable/baseline_history_24" />
 
     <ListView
         android:id="@+id/listViewPurchases"
@@ -30,6 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="@string/hint_backMenu" />
+        android:text="@string/hint_backMenu"
+        android:drawableRight="@drawable/baseline_menu_24"/>
 
 </RelativeLayout>

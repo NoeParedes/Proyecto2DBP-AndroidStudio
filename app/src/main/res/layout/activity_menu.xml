@@ -36,21 +36,21 @@
             android:layout_width="match_parent"
             android:text="Ver Cuenta"
             android:backgroundTint="@color/btn_color"
-            android:drawableLeft="@drawable/ic_sell"
+            android:drawableLeft="@drawable/baseline_account_circle_24"
             style="@style/MenuButton"/>
         <Button
             android:id="@+id/buyBooksButton"
             android:layout_width="match_parent"
             android:text="Comprar libros"
             android:backgroundTint="@color/btn_color"
-            android:drawableLeft="@drawable/ic_library"
+            android:drawableLeft="@drawable/ic_sell"
             style="@style/MenuButton"/>
         <Button
             android:id="@+id/viewPurchaseButton"
             android:layout_width="match_parent"
             android:text="Ver mis Compras"
             android:backgroundTint="@color/btn_color"
-            android:drawableLeft="@drawable/ic_library"
+            android:drawableLeft="@drawable/baseline_remove_red_eye_24"
             style="@style/MenuButton"/>
         <Button
             android:id="@+id/logoutButton"
@@ -58,7 +58,6 @@
             android:text="Cerrar Sesion"
             android:backgroundTint="@color/btn_color"
             android:drawableLeft="@drawable/ic_logout"
-            android:drawableRight="@drawable/baseline_123_24"
             style="@style/MenuButton"/>
     </LinearLayout>
 

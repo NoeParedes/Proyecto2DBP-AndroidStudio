@@ -43,7 +43,8 @@
             android:id="@+id/buttonBuyBooks"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Comprar" />
+            android:text="Comprar"
+            android:drawableRight="@drawable/ic_sell"/>
 
     </LinearLayout>
 </LinearLayout>

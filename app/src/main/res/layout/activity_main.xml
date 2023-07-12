@@ -34,7 +34,9 @@
             android:layout_marginRight="25dp"
             android:layout_marginTop="50dp"
             android:inputType="textEmailAddress"
-            android:textSize="15sp"/>
+            android:textSize="15sp"
+            android:drawableRight="@drawable/baseline_email_24"
+            />
         <EditText
             android:id="@+id/editTextPassword"
             android:layout_width="match_parent"
@@ -44,7 +46,9 @@
             android:layout_marginRight="25dp"
             android:layout_marginTop="15dp"
             android:inputType="textPassword"
-            android:textSize="15sp"/>
+            android:textSize="15sp"
+            android:drawableRight="@drawable/baseline_password_24"
+            />
     </LinearLayout>
 
     <LinearLayout
@@ -60,12 +64,15 @@
             android:text="Iniciar sesion"
             android:layout_marginRight="25dp"
             android:layout_marginLeft="25dp"
-            android:backgroundTint="@color/btn_color"/>
+            android:backgroundTint="@color/btn_color"
+            android:drawableRight="@drawable/login_24"/>
         <TextView
             android:id="@+id/tv_go_to_register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="¿No tienes una cuenta?"
+            android:drawableLeft="@drawable/baseline_no_accounts_24"
+            android:drawableRight="@drawable/baseline_no_accounts_24"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"/>
 
